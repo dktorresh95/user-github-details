@@ -1,0 +1,15 @@
+<div *ngIf="user$ | async as user" class="container mt-5">
+  <div class="card text-center">
+    <div class="card-header bg-primary text-white">
+      <h2 class="card-title">{{ user?.login }}</h2>
+    </div>
+    <div class="card-body">
+      <img [src]="user?.avatar_url" [alt]="user?.login" class="mb-3"
+        style="width: 150px; height: 150px"/>
+      <p class="">{{ user?.followers | Followers }}</p>
+      <a [routerLink]="['/followers', username]" class="btn btn-primary mt-3">
+        Ver Seguidores
+      </a>
+    </div>
+  </div>
+</div>
